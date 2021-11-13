@@ -4,8 +4,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import LoginPage from './pages/screens/LoginScreen';
 import MainListNavigation from './pages/navigation/MainListNavigation';
-import MyPage from './pages/navigation/MypageNavigation';
-
+import MyPageNavigation from './pages/navigation/MypageNavigation';
+import Detail from "./pages/screens/Detail/index"
 
 const Tab = createBottomTabNavigator()
 
@@ -31,7 +31,7 @@ export default function App() {
           )}} 
         />
         <Tab.Screen name="MyPage" 
-          component={MyPage} 
+          component={MyPageNavigation} 
           options={{tabBarIcon:()=>(<Ionicons
             name="apps-outline"
             size={20}/>
@@ -39,7 +39,7 @@ export default function App() {
           )}}
         />
         <Tab.Screen name="Detail" 
-          component={MainListNavigation} 
+          component={Detail} 
           options={{headerShown:false, tabBarIcon:()=>(<Ionicons 
                     name="list-outline"
                     size={20}/>

@@ -1,12 +1,9 @@
 import * as React from 'react';
+import MyPage from '../screens/Mypage/index'
 
-import { Text, View } from 'react-native';
 
-export default function MyPage(){
+export default function MyPageNavigation(){
 
-    return(
-    <View>
-        <Text>마이페이지 입니다.</Text>
-    </View>
-    )
+    return <MyPage/>
+    
 }
