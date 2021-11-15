@@ -4,7 +4,7 @@ import { GoogleSignin, GoogleSigninButton } from '@react-native-community/google
 import { Image, View } from 'react-native';
 import MainListNavigation from '../navigation/MainListNavigation'
 import styled from '@emotion/native';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import firestore from '@react-native-firebase/firestore'
 
 export default function LoginPage() {
@@ -25,7 +25,7 @@ export default function LoginPage() {
     console.log(userInfo.idToken);
     AsyncStorage.setItem('accessToken', userInfo.idToken)
     const googleCredential = auth.GoogleAuthProvider.credential(userInfo.idToken);
-    firestore().collection("User").add(userInfo.user)
+    firestore().collection("Users").add(userInfo.user)
     return auth().signInWithCredential(googleCredential);
   }
 
@@ -42,7 +42,7 @@ export default function LoginPage() {
 
   return (
     <Wrapper>
-      <Logo source={require('../../public/images/Logo/LogoExample.png')}/>
+      <Logo source={require('../../public/images/Logo/DogetherLogo.png')}/>
       <GoogleSigninButton 
         onPress={onGoogleButtonPress}
         
@@ -64,7 +64,6 @@ const Wrapper = styled(View)`
 const Logo = styled(Image)`
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 100px;
+  margin-bottom: 50px;
 `
 
