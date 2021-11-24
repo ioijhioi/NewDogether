@@ -12,11 +12,7 @@ import {
     NickNameWrapper,
     PushWrapper,
 } from "./Mypage.styles"
-
-
   // LogoutButtonWrapper,
-  PushWrapper,
-} from './Mypage.styles';
 
 function MyPagePage({navigation}) {
   return (
